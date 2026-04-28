@@ -1,7 +1,27 @@
 import Icon from "@/components/ui/icon";
-import { PRODUCTS } from "@/data/constants";
 
-type Product = typeof PRODUCTS[0];
+const CARD_IMG = "https://cdn.poehali.dev/projects/abf1b166-d868-4580-ae8d-70e96172ac04/files/bb492c3e-a214-45b8-a883-35ea54911e43.jpg";
+
+export type Product = {
+  id: number;
+  game: string;
+  title: string;
+  price: string;
+  rank: string;
+  verified: boolean;
+  insurance: boolean;
+  img: string;
+  seller: string;
+};
+
+export const PRODUCTS: Product[] = [
+  { id: 1, game: "CS2", title: "Аккаунт Prime / 2500 часов", price: "1 290 ₽", rank: "MG2", verified: true, insurance: true, img: CARD_IMG, seller: "GameMaster_Pro" },
+  { id: 2, game: "Dota 2", title: "Аккаунт MMR 6000+", price: "3 500 ₽", rank: "Ancient I", verified: true, insurance: true, img: CARD_IMG, seller: "DotaKing99" },
+  { id: 3, game: "Valorant", title: "Аккаунт Radiant / Full Access", price: "8 900 ₽", rank: "Radiant", verified: true, insurance: false, img: CARD_IMG, seller: "ValorantPro" },
+  { id: 4, game: "WoW", title: "Персонаж 80 лвл / BiS шмот", price: "5 200 ₽", rank: "Mythic+", verified: false, insurance: true, img: CARD_IMG, seller: "WarcraftLord" },
+  { id: 5, game: "GTA Online", title: "Аккаунт $2B / Max Level", price: "2 100 ₽", rank: "Rank 500", verified: true, insurance: true, img: CARD_IMG, seller: "LosAngelesV" },
+  { id: 6, game: "Fortnite", title: "500+ скинов / OG стаф", price: "4 400 ₽", rank: "Champion", verified: true, insurance: true, img: CARD_IMG, seller: "FortniteLegend" },
+];
 
 export default function ProductCard({ product }: { product: Product }) {
   return (
